@@ -36,7 +36,7 @@ jobs:
         username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/getcountcart:latest
-          docker stop getcountcart || true
-          docker rm getcountcart || true
-          docker run -d --name getcountcart -p 8080:8080 ${{ secrets.DOCKER_HUB_USERNAME }}/getcountcart:latest
+          sudo docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/getcountcart:latest
+          sudo docker stop getcountcart || true
+          sudo docker rm getcountcart || true
+          sudo docker run -d --name getcountcart -p 8080:8080 ${{ secrets.DOCKER_HUB_USERNAME }}/getcountcart:latest
